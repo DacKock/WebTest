@@ -1,0 +1,22 @@
+.bh {
+    color: #000; 
+    text-decoration: none;
+}
+.tlog {
+    /*border-collapse: collapse;*/
+    border-spacing: 5px;
+    border: 0px;
+}
+td {
+    border: 0px;
+}
+fieldset { 
+    width: 200px; /* Ширина */ 
+}
+.fieldset1 { 
+    width: 200px; /* Ширина */ 
+    padding: 0 10px; /* Поля */
+}
+.fieldset1:nth-child(odd) { 
+    float: left; /* Обтекание для всех нечётных элементов */ 
+}

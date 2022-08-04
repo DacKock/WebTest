@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8"/>
+        <link href="Styles.css" rel="stylesheet" type="text/css">
+        <title>Формы</title>
+        <script>
+            function sizePic() {
+                size = document.getElementById("size").value;
+                img = document.getElementById("pic");
+                img.width = 60 + 20*size;
+            }
+            function bodyBgColor() {
+                bgcolor = document.getElementById("bg").value;
+                document.bgColor = bgcolor;
+            }
+            function agreeForm(f) {
+                // Если поставлен флажок, снимаем блокирование кнопки
+                if (f.agree.checked) f.submit.disabled = 0 
+                // В противном случае вновь блокируем кнопку
+                else f.submit.disabled = 1
+            }
+        </script>
+    </head>
+    <body>
+        <h1><a class="bh" href="Forms.html">BACK TO HOME</a></h1>
+        <p>Простая форма поиска</p>
+        <form action="">
+            <p><input placeholder="Введите для поиска" id="search"/> <input type="submit"></p>
+        </form>
+        <br/><br/><br/>
+        <form>
+            <p><input name="a" value="value"> <input type="submit"></p>
+        </form>
+        <form id="auth"></form>
+        <p>...</p>
+        <p><input name="login" form="auth" placeholder="login">
+        <input type="password" name="pass" form="auth" placeholder="password"></p>
+        <p><input type="submit" form="auth"></p> 
+        <form>
+            <p><b>Какое у вас состояние разума?</b></p>
+            <p><input name="dzen" type="radio" value="nedzen"> Не дзен</p>
+            <p><input name="dzen" type="radio" value="dzen"> Дзен</p>
+            <p><input name="dzen" type="radio" value="pdzen" checked> Полный дзен</p>
+            <p><input type="submit" value="Выбрать"></p>
+        </form> 
+        <form action="handler.php">
+            <p>В каких годах произошли самые известные извержения вулкана Кракатау?</p>
+            <p><input type="checkbox" name="a" value="1417"> 1417</p>
+            <p><input type="checkbox" name="a" value="1680" checked> 1680</p>
+            <p><input type="checkbox" name="a" value="1883" checked> 1883</p>
+            <p><input type="checkbox" name="a" value="1934"> 1934</p>
+            <p><input type="checkbox" name="a" value="2010"> <img src="https://thumbs.dreamstime.com/z/%D0%B7%D0%BE%D0%BD%D1%82%D0%B8%D0%BA-%D1%81-%D0%BE%D0%B6-%D0%B5%D0%BC-54277489.jpg" width="50" height="50" alt="Поиск"/></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p><select name="select" size="3" multiple="multiple">
+                <option selected value="s1">Чебурашка</option>
+                <option value="s2">Крокодил Гена</option>
+                <option value="s3">Шапокляк</option>
+                <option value="s4">Крыса Лариса</option>
+            </select><br/>
+            <input type="submit" value="Отправить"></p> 
+        </form>
+        <form>
+            <p><strong>Выбери персонажа</strong></p>
+            <p><select name="hero">
+                <option value="s1">Чебурашка</option>
+                <option value="s2" selected>Крокодил Гена</option>
+                <option value="s3">Шапокляк</option>
+                <option value="s3" label="Лариса">Крыса Лариса</option>
+            </select> 
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p><select name="food">
+                <optgroup label="Русская кухня">
+                    <option value="r1">Закуска Барская</option>
+                    <option value="r2">Раки, фаршированные по-царски</option>
+                    <option value="r3">Биточки в горшочке</option>
+                </optgroup>
+                <optgroup label="Украинская кухня">
+                    <option value="u1">Галушки славянские</option>
+                    <option value="u2">Пампушки украинские</option>
+                    <option value="u3">Жаркое по-харьковски</option>
+                </optgroup>
+            </select></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form action="handler.php">
+            <p><b>Напишите любимое слово и нажмите кнопку Отправить 
+            (никакие данные не будут передаваться на сервер!):</b></p>
+            <p><input size="25" name="word">
+            <input type="hidden" name="name" value="Vasya">
+            <input type="hidden" name="password" value="pupkin"></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form action="handler.php">
+            <p class="question">В  какую игру вы предпочитаете играть?</p>
+            <p><input type="radio" name="game" value="1"> Руммикуб</p>
+            <p><input type="radio" name="game" value="2">Колонизаторы</p>
+            <p><input type="radio" name="game" value="3">Каркассон</p>
+            <p><input type="radio" name="game" value="4"> Зельеварение</p>
+            <p><input type="image" src="Screenshot_5.png" alt="OK" name="button_ok">
+        </form>
+        <form enctype="multipart/form-data" method="post">
+            <p><input type="file" name="f">
+            <input type="submit" value="Отправить"></p>
+        </form> 
+        <form enctype="multipart/form-data" method="post">
+            <p>Загрузите ваши фотографии на сервер</p>
+            <p><input type="file" name="photo" multiple="multiple" accept="image/*,image/jpeg">
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form action="handler.php">
+            <p>Вход на сайт</p>
+            <table class="tlog">
+                <thead>
+                    <tr><td colspan="2"><strong>Login in site</strong></td></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Email: </td><td><input type="email" name="login"></td></tr>
+                    <tr><td>Пароль: </td><td><input type="password" name="pass"></td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="2"><input type="submit" value="Вход"></td></tr>
+                </tfoot>
+            </table>
+            <p>Email: <input type="email" name="login"></p>
+            <p>Пароль: <input type="password" name="pass"></p>
+            <p><input type="submit" value="Вход"></p>
+        </form>
+        <form>
+            <p><input placeholder="Ваше имя" name="user"></p>
+            <p><input type="url" placeholder="Сайт" name="site" required></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Укажите цвет фона: <input type="color" id="bg" value="#ff0000" oninput="bodyBgColor()">
+            <input type="submit" value="Выбрать"></p>
+        </form>
+        <form action="handler.php">
+            <p>Введите число от 1 до 10:</p>
+            <p><input type="number" name="num" min="1" max="10" step="0.1" value="1"></p>
+        </form>
+        <p>Размер рисунка: <input type="range" min="1" max="5" step="0.05" id="size" oninput="sizePic()" value="1"></p>
+        <p><img src="Screenshot_5.png" alt="" id="pic"></p>
+        <form>
+            <p>Выберите дату: <input type="date" name="calendar">
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Выберите дату: 
+            <input type="date" name="calendar" value="2012-06-01" max="2012-06-04" min="2012-05-29">
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Укажите месяц: 
+            <input type="month" name="month">
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Укажите неделю: 
+            <input type="week" name="week">
+            <input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Время создания публикации</p>
+            <p><input type="datetime-local" name="created"></p>
+            <p><input type="submit"></p>
+        </form>
+        <form>
+            <p>В какое время запускать Cron?</p>
+            <p><input type="time" name="cron" value="03:15" min="00:01" max="06:00">
+            <input type="submit"></p>
+        </form>
+        <form>
+            <p><input type="search" name="q" placeholder="Поиск по сайту"> 
+            <input type="submit" value="Найти"></p>
+        </form>
+        <form>
+            <p>Ваше имя: <input name="login"></p>
+            <p>Телефон в формате 2xxx-xxx:  <input type="tel" name="tel" 
+            pattern="2[0-9]{3}-[0-9]{3}"></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <fieldset>
+                <legend>Вход на сайт</legend>
+                <p>Логин: <input name="login"></p>
+                <p>Пароль: <input type="password" name="pass"></p>
+                <p><input type="submit" value="Вход"></p>
+            </fieldset>
+            <fieldset>
+                <legend><b>Вход на сайт</b></legend>
+                <table class="tlog">
+                    <tbody>
+                        <tr><td>Email: </td><td><input type="email" name="login"></td></tr>
+                        <tr><td>Пароль: </td><td><input type="password" name="pass"></td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="2"><input type="submit" value="Вход"></td></tr>
+                    </tfoot>
+                </table>
+            </fieldset>
+        </form>
+        <br/><br/>
+        <form>
+            <fieldset class="fieldset1">
+                <p>Имя:</p>
+                <p><input name="name" tabindex="1"></p>
+            </fieldset>
+            <fieldset class="fieldset1">
+                <p>Фамилия:</p>
+                <p><input name="lastname" tabindex="3"></p> 
+            </fieldset>
+            <fieldset class="fieldset1">
+                <p>Телефон:</p>
+                <p><input name="tel" type="tel" tabindex="2"></p> 
+            </fieldset>
+            <fieldset class="fieldset1">
+                <p>Пол:</p>
+                <p><select name="gender" tabindex="4">
+                    <option selected>Мужской</option>
+                    <option>Женский</option>
+                </select></p>
+            </fieldset>
+        </form>
+        <form>
+            <p><textarea cols="30" rows="4" disabled>
+Типовой договор
+Отдаю свою душу,   а взамен получаю здоровье и бессмертие. 
+            </textarea></p>
+            <p><input type="checkbox" name="agree" onclick="agreeForm(this.form)"> 
+                Я согласен со всеми условиями</p>
+            <p><input type="submit" name="submit" value="Далее" disabled></p>
+        </form>
+        <form>
+            <p><textarea>Обычное текстовое поле</textarea>
+            <textarea readonly>Поле только для чтения</textarea></p>
+        </form>
+        <form>
+            <fieldset>
+                <legend>Вход на сайт</legend>
+                <p><input name="login" autofocus></p>
+                <p><input type="password" name="pass"></p>
+                <p><input type="submit" value="Вход"></p>
+            </fieldset>
+        </form>
+        <form>
+            <p><input name="login" placeholder="Логин"></p>
+            <p><input name="pass" type="password" placeholder="Пароль"></p>
+            <p><input type="submit" value="Вход"></p>
+        </form>
+        <form>
+            <p>Введите IP-адрес:</p>
+            <p><input name="ip" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+        <form>
+            <p>Введите шестнадцатеричное значение цвета 
+            (должно начинаться с #)</p>
+            <p><input name="digit" value="#" required pattern="#[0-9A-Fa-f]{6}"></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+    </body>
+</html>
